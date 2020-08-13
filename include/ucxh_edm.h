@@ -26,7 +26,7 @@ Component:  u-connectXpress Host Library
 #define _UCXH_AT_EDM_H
 
 #include <unistd.h>
-
+#include <stdint.h>
 /** Return value for successful execution of a function */
 #define ucxhEDM_OK                  0
 /** Return value for general failure during execution of a function, not covered by any other return value */
