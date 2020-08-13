@@ -9,3 +9,5 @@ ex_edm_wifi.exe
 /ex_tokenizer.exe
 /ex_edm_at_read.exe
 /*.exe
+.idea/**/*
+cmake-build-debug/**/*
