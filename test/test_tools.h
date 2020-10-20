@@ -24,6 +24,8 @@ Component:  u-connectXpress Host Library
 #ifndef _TEST_TOOLS_H
 #define _TEST_TOOLS_H
 
+#include <stdint.h>
+
 #define EOL "\r\n"
 
 #define OK        "OK" EOL

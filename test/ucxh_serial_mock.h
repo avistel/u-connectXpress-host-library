@@ -21,6 +21,7 @@ Component:  u-connectXpress Host Library
 */
 
 #include "errno.h"
+#include <stdint.h>
 
 typedef enum ucxhSERIAL_writeResult_t {
   ucxhSERIAL_WRITE_RESULT_ERROR = -ENOTSUP,

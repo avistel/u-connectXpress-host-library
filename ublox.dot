@@ -1,0 +1,78 @@
+digraph G {
+
+    subgraph "cb includes" {
+        rank=same;
+        "cb_at_util.h";
+        "cb_comdefs.h";
+        "cb_platform_basic_types.h";
+        "cb_status.h";
+        "cb_string.h";
+        "cb_tokenizer.h"
+    }
+
+    subgraph "ucxh includes" {
+        rank=same;
+        "ucxh_config.h";
+        "ucxh_edm.h";
+        "ucxh_edm_parser.h";
+        "ucxh_library.h";
+        "ucxh_mode.h";
+        "ucxh_parser.h";
+        "ucxh_poll.h";
+        "ucxh_send.h";
+        "ucxh_serial.h";
+        "ucxh_urc.h";
+        "ucxh_wait.h";
+        "ucxh_wifi.h";
+    }
+
+
+    "cb_comdefs.h"  -> "cb_at_util.h" 
+    "cb_status.h"   -> "cb_at_util.h" 
+    "ucxh_edm.h"    ->  "ucxh_parser.h"
+    "ucxh_poll.h"   ->  "ucxh_parser.h"
+    "ucxh_wait.h"   ->  "ucxh_parser.h"
+    "ucxh_wifi.h"   ->  "ucxh_parser.h"
+    
+    "cb_platform_basic_types.h" -> "cb_comdefs.h"  -> "cb_status.h"  
+    "cb_string.h"               -> "cb_comdefs.h"
+    "cb_status.h"               -> "cb_tokenizer.h"            
+    "ucxh_parser.h"               -> "ucxh_edm_parser.h"         
+    "ucxh_poll.h"                 -> "ucxh_edm_parser.h"         
+    "ucxh_edm.h"                  -> "ucxh_edm_parser.h"         
+    "ucxh_edm_parser.h"         -> "ucxh_library.h"
+    "ucxh_mode.h"               -> "ucxh_library.h"
+    "ucxh_parser.h"             -> "ucxh_library.h"
+    "ucxh_send.h"               -> "ucxh_library.h"
+    "ucxh_wait.h"               -> "ucxh_library.h"
+    "ucxh_wifi.h"               -> "ucxh_library.h"
+    "ucxh_edm.h"                -> "ucxh_library.h"
+    "ucxh_wifi.h"               -> "ucxh_urc.h"
+
+    "cb_at_util.h" -> "cb_at_util.c" 
+    "cb_string.h" -> "cb_at_util.c"
+
+    "cb_string.h" -> "cb_string.c"
+    "cb_comdefs.h" -> "cb_string.c"
+
+    "cb_tokenizer.h" -> "cb_tokenizer.c"
+    "cb_at_util.h" -> "cb_tokenizer.c"
+    "cb_string.h" -> "cb_tokenizer.c"
+    "ucxh_edm.h" -> "ucxh_edm.c"
+    "ucxh_edm_parser.h" -> "ucxh_edm_parser.c"
+    "ucxh_config.h"  -> "ucxh_edm_parser.c"
+    "ucxh_library.h" -> "ucxh_edm_parser.c"
+    "ucxh_serial.h"  -> "ucxh_edm_parser.c"
+    "ucxh_config.h"  -> "ucxh_mode.c"
+    "ucxh_library.h" -> "ucxh_mode.c"
+    "ucxh_serial.h"  -> "ucxh_mode.c"
+    "ucxh_mode.h"  -> "ucxh_mode.c"
+
+    "cb_tokenizer.h" -> "ucxh_parser.c"
+    "ucxh_config.h" -> "ucxh_parser.c"
+    "ucxh_library.h" -> "ucxh_parser.c"
+    "ucxh_serial.h" -> "ucxh_parser.c"
+    "ucxh_parser.h" -> "ucxh_parser.c"
+
+    
+}

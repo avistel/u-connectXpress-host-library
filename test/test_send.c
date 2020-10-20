@@ -357,7 +357,7 @@ int main()
   assert(ucxhPARSER_waitForOk(-1) == ucxhAT_RESPONSE_OK);
 
   assert(ucxhPARSER_buildSetCmd("MYCMD"));
-  assert(!ucxhPARSER_addIpV4Address("ABC"));
+  assert(!ucxhPARSER_addIpV4Address("ABCD"));
   assert(!ucxhPARSER_sendBuiltCommand());
   assert(ucxhSERIAL_wasStringWritten(""));
 

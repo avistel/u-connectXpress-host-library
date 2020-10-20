@@ -8,19 +8,20 @@ BEGIN {
 
 }
 {
-    gsub(/^[ \t]+/,"",$1);
-    gsub(/^[ \t]+/,"",$2);
-    gsub(/^"/,"",$2);
-    gsub(/"$/,"",$2);
-    gsub(/^[ \t]+/,"",$3);
-    gsub(/^[ \t]+/,"",$4);
-    gsub(/^[ \t]+/,"",$5);
-    gsub(/[ \t]+$/,"",$5);
-    URC=$1
+
+    gsub(/^[ \t]+/,"",$1);  # strip leading whitespaces
+    gsub(/^[ \t]+/,"",$2);  # strip leading whitespaces
+    gsub(/^"/,"",$2);       # strip leading double-quote
+    gsub(/"$/,"",$2);       # strip trailing double-quote
+    gsub(/^[ \t]+/,"",$3);  # strip leading whitespaces
+    gsub(/^[ \t]+/,"",$4);  # strip leading whitespaces
+    gsub(/^[ \t]+/,"",$5);  # strip leading whitespaces
+    gsub(/[ \t]+$/,"",$5);  # strip trailing whitespaces
+    URC=$1                  #
     NAME=$2;
-    IDENTIFIER=$3;
-    MUSTFINAL=$4;
-    CBONOK=$5;
+    IDENTIFIER=$3;          #  goes into
+    #MUSTFINAL=$4;
+    #CBONOK=$5;
 
     print ""
     print ""
