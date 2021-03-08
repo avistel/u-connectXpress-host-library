@@ -35,16 +35,26 @@ set(TEST_SOURCES
     test/test_at_wifi.c
     test/test_ati9.c)
 
+add_custom_target(urc_header
+                    bash -c ./mk_urc_header.sh
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    DEPENDS include/ucxh_urc.h)
 enable_testing()
 # add the library
-#add_library(ucxh ${SOURCES})
-#add_link_options(ucxh -mconsole)
+add_library(ucxh ${SOURCES})
+add_dependencies(ucxh urc_header)
+
+add_executable(ex_ethernet_wifi_bridge
+                examples/ex_ethernet_wifi_bridge.c
+                src/windows/ucxh_serial_win.c)
+target_link_libraries(ex_ethernet_wifi_bridge PRIVATE ucxh)
+
 foreach(FILENAME IN ITEMS ${TEST_SOURCES})
     get_filename_component(TGT_NAME ${FILENAME} NAME_WLE)
     message(DEBUG "Target name: $(TGT_NAME)")
     add_executable(${TGT_NAME} ${FILENAME} test/ucxh_serial_mock.c test/test_tools.c)
     target_compile_definitions(${TGT_NAME} PRIVATE CONFIG_USE_MOCKED_SERIAL)
-    target_sources(${TGT_NAME} PRIVATE ${SOURCES})
+    target_link_libraries(${TGT_NAME} PRIVATE ucxh)
     string(REGEX REPLACE "test_" "" CTEST_TGT_NAME ${TGT_NAME})
     add_test(${CTEST_TGT_NAME} ${TGT_NAME})
 endforeach()
