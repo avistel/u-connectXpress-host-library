@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name
 project(uconnectxpress_host_library)
 include(Ctest)
-include_directories(include)
+include_directories(include resources)
 
 set(SOURCES
     src/cb_at_util.c
