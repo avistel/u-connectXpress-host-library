@@ -26,6 +26,8 @@ Component:  u-connectXpress Host Library
 #define _UCXH_AT_SEND_H
 
 #include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 /** Transmit a series of AT command in AT mode.
  * \attention This function requires the module to be in AT mode. 

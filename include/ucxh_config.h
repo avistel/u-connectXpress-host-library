@@ -166,7 +166,7 @@ Component:  u-connectXpress Host Library
  * On windows, use the format `"\\\\.\\COM44"`
  */
 #ifndef UCXH_PARSER_COMPORT
-#define UCXH_PARSER_COMPORT "\\\\.\\COM14"
+#define UCXH_PARSER_COMPORT "\\\\.\\COM13"
 #endif
 
 /** @} */

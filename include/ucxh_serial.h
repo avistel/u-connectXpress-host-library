@@ -27,6 +27,7 @@ Component:  u-connectXpress Host Library
 
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #ifndef CR
 #define CR	'\r'
