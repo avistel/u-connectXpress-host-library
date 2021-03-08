@@ -22,16 +22,16 @@ set(SOURCES
 list(APPEND src/generic/ucxh_serial_generic.c)
 
 set(TEST_SOURCES
-    test/test_datamode.c
+    #test/test_datamode.c
     test/test_edm.c
     test/test_mock_ati9.c
     test/test_getsystem.c
     test/test_tokenizer.c
-    test/test_edm_at.c
+    #test/test_edm_at.c
     test/test_getgeneral.c
-    test/test_send.c
-    test/test_edm_at_read.c
-    test/test_at_peer.c
+    #test/test_send.c
+    #test/test_edm_at_read.c
+    #test/test_at_peer.c
     test/test_at_wifi.c
     test/test_ati9.c)
 
