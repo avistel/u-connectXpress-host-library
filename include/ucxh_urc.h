@@ -61,7 +61,9 @@ _XMACRO(UUNU,    "Network Up",                      NetworkUp,                  
 _XMACRO(UUWLD,   "WiFi Link Disconnected",          WifiLinkDisconnected,             NULL,                  NULL) \
 _XMACRO(UUWLE,   "WiFi Link Connected",             WifiLinkConnected,                NULL,                  NULL) \
 _XMACRO(UWSC,    "WiFi Station Configuration",      WifiStationConfiguration,         NULL,                  ucxhURC_CALLBACK_ON_OK) \
-_XMACRO(UWSSTAT, "WiFi Station Status",             WifiStationStatus,                NULL,                  NULL)
+_XMACRO(UWSSTAT, "WiFi Station Status",             WifiStationStatus,                NULL,                  NULL) \
+_XMACRO(UUETHLU, "Ethernet Up",                     EthernetUp,                       NULL,                NULL) \
+_XMACRO(UUETHLD, "Ethernet Down",                   EthernetDown,                     NULL,                NULL)
 // __END_GREP_MAGIC__ -- DO NOT REMOVE THIS LINE
 
 
@@ -588,6 +590,9 @@ typedef struct ucxhPARSER_urcWifiStationStatusEvent_t {
 
 } ucxhPARSER_urcWifiStationStatusEvent_t;
 
+typedef struct ucxhPARSER_urcEthernetEvent_t {
+    int isUp;
+} ucxhPARSER_urcEthernetUpEvent_t, ucxhPARSER_urcEthernetDownEvent_t ;
 /*! @} */
 
 

@@ -42,7 +42,8 @@ TRIVIAL_EVENT(I0,   TypeCodeIdentification,          ARRAY, type_code)
 TRIVIAL_EVENT(I10,  McuIdentification,               ARRAY, mcu_identification)
 TRIVIAL_EVENT(UDCP, ConnectPeer,                     INT,   peer_id)
 EMPTY_EVENT(STARTUP, Startup)
-
+EMPTY_EVENT(UUETHLU, EthernetUp)
+EMPTY_EVENT(UUETHLD, EthernetDown)
 //
 //  For non-trivial events, we need to write a little more code...
 //
